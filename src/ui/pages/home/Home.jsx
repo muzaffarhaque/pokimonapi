@@ -81,14 +81,14 @@ const Home = () => {
   }, []);
   const [checkboxesdata, setCheckboxesdata] = useState([]);
   const handleCheckboxChange = (event, outerIndex, innerIndex) => {
-    const checkboxId = pokemonList[outerIndex][innerIndex].firstData.id; // Get the checkbox ID from the corresponding data
+    const checkboxId = pokemonList[outerIndex][innerIndex].firstData.id; 
     const isChecked = event.target.checked;
  
     if (isChecked) {
-      // Add the checkbox to the array
+     
       setCheckboxesdata([...checkboxesdata, checkboxId]);
     } else {
-      // Remove the checkbox from the array
+     
       setCheckboxesdata(checkboxesdata.filter((id) => id !== checkboxId));
     }
     console.log();
@@ -113,7 +113,10 @@ const Home = () => {
     if(data[0].firstData.abilities[0].ability.name==ability || data[0].firstData.name==move || data[0].firstData.species.name==species ){
       console.log(data)
        return data;
+    }else{
+      return data;
     }
+   
   //  console.log(data[0].firstData.abilities[0].ability.name)
    }
   // todo:Filter functin
@@ -181,7 +184,10 @@ const Home = () => {
       <div className="main-frame-cards">
         {pokemonList?.map((pokemon, index) => (
           <div className="bostrap-card" key={index}>
-            {filterData(pokemon)?.map((intem2, i) => {
+            {
+            
+            
+            filterData(pokemon)?.map((intem2, i) => {
               // console.log(pokemon[0]);
               //  console.log(intem2.secondLocation);
               return (
