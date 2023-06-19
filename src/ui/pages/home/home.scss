@@ -1,66 +1,192 @@
-.location-Names{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.location-Names {
+   
+    // height: 10vh !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
-
 // * Loading start------------------------------------------
-
-.center {
-    height: 70px;
+.center-body {
     display: flex;
     justify-content: center;
     align-items: center;
-    // background: #000;
-  }
-  .wave {
-    width: 5px;
-    height: 100px;
-    background: linear-gradient(45deg, rgb(10, 10, 209), #d81212);
-    margin: 10px;
-    animation: wave 1s linear infinite;
-    border-radius: 20px;
-  }
-  .wave:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-  .wave:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-  .wave:nth-child(4) {
-    animation-delay: 0.3s;
-  }
-  .wave:nth-child(5) {
-    animation-delay: 0.4s;
-  }
-  .wave:nth-child(6) {
-    animation-delay: 0.5s;
-  }
-  .wave:nth-child(7) {
-    animation-delay: 0.6s;
-  }
-  .wave:nth-child(8) {
-    animation-delay: 0.7s;
-  }
-  .wave:nth-child(9) {
-    animation-delay: 0.8s;
-  }
-  .wave:nth-child(10) {
-    animation-delay: 0.9s;
-  }
-  
-  @keyframes wave {
-    0% {
-      transform: scale(0);
+    width: 100vw;
+    height: 70px;
+    /****** center box
+    width: 300px;
+    height: 300px;
+    border: solid 1px #aaa;
+    ******/
+}
+
+.loader-circle-11 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+    perspective: 400px;
+}
+.loader-circle-11 .arc {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-bottom: 5px solid #f00;
+}
+.loader-circle-11 .arc:nth-child(1) {
+    animation: rotate1 1.15s linear infinite;
+}
+.loader-circle-11 .arc:nth-child(2) {
+    animation: rotate2 1.15s linear infinite;
+}
+.loader-circle-11 .arc:nth-child(3) {
+    animation: rotate3 1.15s linear infinite;
+}
+.loading .arc:nth-child(1) {
+    animation-delay: -0.8s;
+}
+.loader-circle-11 .arc:nth-child(2) {
+    animation-delay: -0.4s;
+}
+.loader-circle-11 .arc:nth-child(3) {
+    animation-delay: 0s;
+}
+@keyframes rotate1 {
+    from {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);
     }
-    50% {
-      transform: scale(1);
+    to {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);
     }
-    100% {
-      transform: scale(0);
+}
+@keyframes rotate2 {
+    from {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0);
     }
-  }
+    to {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(1turn);
+    }
+}
+@keyframes rotate3 {
+    from {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0);
+    }
+    to {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(1turn);
+    }
+}
 
 // * Loading start------------------------------------------
+
+.dropdown-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    width: 100%;
+    .dropdown-wrapper {
+        width: 27%;
+        height: 48px;
+        border-radius: 4px;
+        .dropdown {
+            width: 100%;
+            height: 100;
+            border-radius: 4px;
+
+            .drop-down-button {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 8px 5%;
+                font-size: 18px;
+                line-height: 20px;
+                font-weight: 600;
+                background-color: white;
+                border: 2px solid rgb(194, 192, 192);
+                border-radius: 4px;
+                color: rgb(9, 8, 56);
+                &:active {
+                    background-color: none !important;
+                    color: rgb(9, 8, 56) !important;
+
+                }
+
+            }
+            .dropdown-menu.show {
+                width: 100% !important;
+            }
+        }
+    }
+
+}
+.inpt-box{
+    padding: 8px 5%;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+    background-color: white;
+    border: 2px solid rgb(194, 192, 192);
+    border-radius: 4px;
+    color: rgb(9, 8, 56);
+}
+.bostrap-card{
+    width: 27%;
+    min-width: 280px;
+    border-radius: 19px !important;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(8, 8, 8,.1);
+    border: none;
+}
+
+.main-frame-cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    
+}
+.save_icon{
+    cursor: pointer;
+}
+.save_icon_blue{
+    cursor: pointer;
+    color: blue !important;
+    
+}
+.card-img-top{
+    height: 300px;
+    object-fit: contain;
+}
+
+.bookMark-box{
+    font-size: 23px;
+    color: rgb(47, 47, 190);
+    
+}
+.bookmark-frame{
+    position: relative;
+    .no-book{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: -10px;
+        right: -10px;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        background-color: red;
+        color: white;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        border-radius: 50%;
+    }
+}
